@@ -16,7 +16,7 @@ const Search = (props) => {
 
   return (
     <Form>
-      <SearchPanel value={setSearchValue}
+      <SearchPanel value={searchValue}
                    onChange={handleSearchInputChange}
                    type="text" />
       <ButtonSubmit onClick={callSearchFunction}
