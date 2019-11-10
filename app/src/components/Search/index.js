@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Form } from './styles';
+import { Form, SearchPanel, ButtonSubmit } from './styles';
 
 const Search = (props) => {
   const [searchValue, setSearchValue] = useState('');
@@ -12,11 +12,16 @@ const Search = (props) => {
   const callSearchFunction = e => {
     e.preventDefault();
     props.search(searchValue);
-  }
+  };
 
   return (
     <Form>
-
+      <SearchPanel value={setSearchValue}
+                   onChange={handleSearchInputChange}
+                   type="text" />
+      <ButtonSubmit onClick={callSearchFunction}
+                    type="submit"
+                    value="SEARCH" />
     </Form>
   )
 };
