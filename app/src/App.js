@@ -5,6 +5,7 @@ import Search from "./components/Search";
 
 import { MOVIE_API_URL, movieAPISearchURL } from "./utils/api";
 import Movie from "./components/Movie";
+import Movies from "./components/Movies/styles";
 
 
 const App = () => {
@@ -50,13 +51,7 @@ const App = () => {
         <span>Loading...</span>
       ) : errorMessage ? (
         <div>{errorMessage}</div>
-        ) : (movies.map((movie, index) => {
-          return (
-            <div className="movies-container">
-              <Movie key={`${index}-${movie.title}`} movie={movie}/>
-            </div>
-        )
-      }))}
+        ) : <Movies movies={movies}/>}
     </div>
   );
 };
