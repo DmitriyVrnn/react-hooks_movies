@@ -13,10 +13,11 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
-    fetch(MOVIE_API_URL)
+    fetch('https://api.themoviedb.org/3/movie/popular?api_key=6e92d5e15985005b50cb51b6879eaac7&language=en-US&page=1')
       .then(response => response.json())
       .then(jsonResponse => {
-        setMovies([jsonResponse]);
+        console.log(jsonResponse)
+        setMovies(jsonResponse.results);
         setLoading(false);
       })
   }, []);
@@ -49,9 +50,13 @@ const App = () => {
         <span>Loading...</span>
       ) : errorMessage ? (
         <div>{errorMessage}</div>
-        ) : (movies.map((movie, index) => (
-        <Movie key={`${index}-${movie.Title}`} movie={movie}></Movie>
-      )))}
+        ) : (movies.map((movie, index) => {
+          return (
+            <div className="movies-container">
+              <Movie key={`${index}-${movie.title}`} movie={movie}/>
+            </div>
+        )
+      }))}
     </div>
   );
 };
