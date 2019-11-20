@@ -1,18 +1,11 @@
-import React from 'react'
+import styled from 'styled-components';
 
-import Movie from "../Movie";
-import { MoviesContainer } from "./index";
-
-const Movies = ({ movies }) => {
-    return (
-      <MoviesContainer>
-        {movies.map((movie, index) => {
-        return (
-        <Movie key={`${index}-${movie.title}`} movie={movie}/>)
-      })}
-      </MoviesContainer>
-    )
-  }
-;
-
-export default Movies
+export const MoviesContainer = styled.section`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+`;

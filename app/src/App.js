@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Search from "./components/Search";
 
 import { MOVIE_API_URL, movieAPISearchURL } from "./utils/api";
-import Movies from "./components/Movies/styles";
+import Movies from "./components/Movies";
 
 
 const App = () => {
